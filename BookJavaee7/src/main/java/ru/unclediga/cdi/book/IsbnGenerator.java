@@ -1,9 +1,11 @@
 package ru.unclediga.cdi.book;
 
-import javax.inject.Inject;
+import javax.enterprise.inject.Default;
 import java.util.Random;
 import java.util.logging.Logger;
 
+@Default
+/*if not defined == @Default*/
 public class IsbnGenerator implements NumberGenerator {
   private static Logger logger = Logger.getLogger(IsbnGenerator.class.getName());
   public String generateNumber() {
