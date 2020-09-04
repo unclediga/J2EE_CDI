@@ -4,7 +4,6 @@ import javax.inject.Inject;
 
 public class BookService {
   @Inject
-  /* if not defined == @Default*/
   @EightDigits
   private NumberGenerator numberGenerator;
 
