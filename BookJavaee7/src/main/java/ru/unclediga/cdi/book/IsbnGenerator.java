@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.logging.Logger;
 
 
-@NumberOfDigits(value = Digits.THIRTEEN,odd = false)
+@ThirteenDigits @Even
 public class IsbnGenerator implements NumberGenerator {
   private static Logger logger = Logger.getLogger(IsbnGenerator.class.getName());
   public String generateNumber() {
