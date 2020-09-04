@@ -2,6 +2,8 @@ package ru.unclediga.cdi.book.ex04;
 
 import javax.inject.Inject;
 
+import ru.unclediga.cdi.book.*;
+
 public class BookService {
   @Inject
   private NumberGenerator numberGenerator;
