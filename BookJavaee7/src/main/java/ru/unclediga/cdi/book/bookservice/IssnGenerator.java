@@ -1,4 +1,4 @@
-package ru.unclediga.cdi.book;
+package ru.unclediga.cdi.book.bookservice;
 
 import javax.inject.Inject;
 import java.util.logging.Logger;

@@ -1,4 +1,4 @@
-package ru.unclediga.cdi.book;
+package ru.unclediga.cdi.book.bookservice;
 
 import javax.inject.Qualifier;
 import java.lang.annotation.Retention;
@@ -10,5 +10,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Qualifier
 @Retention(RUNTIME)
 @Target({FIELD, TYPE, METHOD})
-public @interface MyRandom {
+public @interface EightDigits {
 }

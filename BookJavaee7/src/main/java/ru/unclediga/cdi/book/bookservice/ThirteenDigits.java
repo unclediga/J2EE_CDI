@@ -1,4 +1,4 @@
-package ru.unclediga.cdi.book;
+package ru.unclediga.cdi.book.bookservice;
 
 import javax.inject.Qualifier;
 import java.lang.annotation.Retention;

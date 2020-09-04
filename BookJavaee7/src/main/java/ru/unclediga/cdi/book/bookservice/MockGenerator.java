@@ -1,7 +1,6 @@
-package ru.unclediga.cdi.book;
+package ru.unclediga.cdi.book.bookservice;
 
 import javax.enterprise.inject.Alternative;
-import java.util.Random;
 
 @Alternative
 @EightDigits  /* if not defined == @Default*/

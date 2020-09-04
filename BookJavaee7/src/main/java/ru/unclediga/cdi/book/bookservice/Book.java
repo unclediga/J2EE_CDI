@@ -1,4 +1,4 @@
-package ru.unclediga.cdi.book;
+package ru.unclediga.cdi.book.bookservice;
 
 public class Book {
     private String title;
