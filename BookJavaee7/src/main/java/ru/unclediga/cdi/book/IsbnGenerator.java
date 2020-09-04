@@ -7,7 +7,9 @@ import java.util.logging.Logger;
 @ThirteenDigits
 @Even
 public class IsbnGenerator implements NumberGenerator {
-    private static Logger logger = Logger.getLogger(IsbnGenerator.class.getName());
+    @Inject
+    private Logger logger;
+
     @Inject
     @ThirteenDigits
     private String prefix;
