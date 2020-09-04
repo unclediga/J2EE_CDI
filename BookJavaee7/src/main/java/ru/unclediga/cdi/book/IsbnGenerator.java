@@ -4,8 +4,8 @@ import javax.enterprise.inject.Default;
 import java.util.Random;
 import java.util.logging.Logger;
 
-@Default
-/*if not defined == @Default*/
+
+@ThirteenDigits
 public class IsbnGenerator implements NumberGenerator {
   private static Logger logger = Logger.getLogger(IsbnGenerator.class.getName());
   public String generateNumber() {

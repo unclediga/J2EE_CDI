@@ -5,7 +5,7 @@ import javax.inject.Inject;
 public class BookService {
   @Inject
   /* if not defined == @Default*/
-  @EightDigits
+  @ThirteenDigits
   private NumberGenerator numberGenerator;
 
   public Book createBook(String title, Float price, String description) {
