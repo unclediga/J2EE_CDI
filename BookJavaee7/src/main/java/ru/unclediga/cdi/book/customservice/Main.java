@@ -13,5 +13,6 @@ public class Main {
         final CustomerService customerService = container.instance().select(CustomerService.class).get();
         customerService.createCustomer(null);
         customerService.findCustomerById(1L);
+        customerService.updateCustomer(null);
     }
 }
