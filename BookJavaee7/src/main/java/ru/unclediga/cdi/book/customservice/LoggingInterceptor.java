@@ -1,5 +1,6 @@
 package ru.unclediga.cdi.book.customservice;
 
+import javax.annotation.Priority;
 import javax.inject.Inject;
 import javax.interceptor.AroundConstruct;
 import javax.interceptor.AroundInvoke;
@@ -9,6 +10,7 @@ import java.util.logging.Logger;
 
 @Loggable
 @Interceptor  /* !!!!  required also <interceptors> in bean.xml !!!! */
+@Priority(Interceptor.Priority.LIBRARY_BEFORE + 10)
 public class LoggingInterceptor {
     @Inject
     Logger logger;
