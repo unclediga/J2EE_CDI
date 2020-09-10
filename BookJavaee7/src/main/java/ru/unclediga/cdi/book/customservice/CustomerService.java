@@ -5,7 +5,6 @@ import javax.inject.Inject;
 import javax.interceptor.ExcludeClassInterceptors;
 import java.util.logging.Logger;
 
-@Loggable
 public class CustomerService {
 //    @Inject
 //    private EntityManager em;
@@ -18,6 +17,7 @@ public class CustomerService {
         sleeper();
     }
 
+    @Loggable
     public void createCustomer(Customer customer) {
         logger.entering(getClass().getName(),"create");
         logger.info("i create");
@@ -25,6 +25,7 @@ public class CustomerService {
 //        em.persist(customer);
     }
 
+    @Loggable
     public Customer findCustomerById(Long id) {
         logger.info("i findCustomerById");
         //        return em.find(Customer23.class, id);
@@ -32,7 +33,6 @@ public class CustomerService {
         return null;
     }
 
-    @ExcludeClassInterceptors  // TODO: !!! not work with interceptor binding !!! //
     public Customer updateCustomer(Customer customer) {
         logger.info("i updateCustomer");
         //        return em.find(Customer23.class, id);
