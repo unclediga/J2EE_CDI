@@ -7,4 +7,7 @@
 <!--    <alternatives>-->
 <!--        <class>ru.unclediga.cdi.book.bookservice.MockGenerator</class>-->
 <!--    </alternatives>-->
+    <interceptors>
+        <class>ru.unclediga.cdi.book.customservice.LoggingInterceptor</class>
+    </interceptors>
 </beans>

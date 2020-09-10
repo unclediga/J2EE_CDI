@@ -3,10 +3,9 @@ package ru.unclediga.cdi.book.customservice;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.interceptor.ExcludeClassInterceptors;
-import javax.interceptor.Interceptors;
 import java.util.logging.Logger;
 
-@Interceptors({I1.class,I2.class})
+@Loggable
 public class CustomerService {
 //    @Inject
 //    private EntityManager em;
@@ -26,7 +25,6 @@ public class CustomerService {
 //        em.persist(customer);
     }
 
-    @Interceptors({I3.class,I4.class}) /* and I1,I2 will execute after that to*/
     public Customer findCustomerById(Long id) {
         logger.info("i findCustomerById");
         //        return em.find(Customer23.class, id);
@@ -34,7 +32,7 @@ public class CustomerService {
         return null;
     }
 
-    @ExcludeClassInterceptors
+    @ExcludeClassInterceptors  // TODO: !!! not work with interceptor binding !!! //
     public Customer updateCustomer(Customer customer) {
         logger.info("i updateCustomer");
         //        return em.find(Customer23.class, id);

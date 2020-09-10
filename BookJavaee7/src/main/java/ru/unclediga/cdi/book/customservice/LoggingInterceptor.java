@@ -3,9 +3,12 @@ package ru.unclediga.cdi.book.customservice;
 import javax.inject.Inject;
 import javax.interceptor.AroundConstruct;
 import javax.interceptor.AroundInvoke;
+import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 import java.util.logging.Logger;
 
+@Loggable
+@Interceptor  /* !!!!  required also <interceptors> in bean.xml !!!! */
 public class LoggingInterceptor {
     @Inject
     Logger logger;
