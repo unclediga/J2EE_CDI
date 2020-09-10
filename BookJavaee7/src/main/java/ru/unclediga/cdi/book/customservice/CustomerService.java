@@ -6,7 +6,7 @@ import javax.interceptor.ExcludeClassInterceptors;
 import javax.interceptor.Interceptors;
 import java.util.logging.Logger;
 
-@Interceptors(ProfileInterceptor.class)
+@Interceptors({I1.class,I2.class})
 public class CustomerService {
 //    @Inject
 //    private EntityManager em;
@@ -26,6 +26,7 @@ public class CustomerService {
 //        em.persist(customer);
     }
 
+    @Interceptors({I3.class,I4.class}) /* and I1,I2 will execute after that to*/
     public Customer findCustomerById(Long id) {
         logger.info("i findCustomerById");
         //        return em.find(Customer23.class, id);
