@@ -8,9 +8,10 @@ public class Main {
         Weld weld = new Weld();
         WeldContainer container = weld.initialize();
         BookService bookService = container.instance().select(BookService.class).get();
-        Book book = bookService.createBook("H2G2", 12.5f, "Geeky scifi Book");
-        book = bookService.createBook("War And Peace", 70.0f, "Russian classic");
-        System.out.println(book);
+        Book book1 = bookService.createBook("H2G2", 12.5f, "Geeky scifi Book");
+        Book book2 = bookService.createBook("War And Peace", 70.0f, "Russian classic");
+        bookService.removeBook(book1);
+        bookService.removeBook(book2);
         weld.shutdown();
     }
 }

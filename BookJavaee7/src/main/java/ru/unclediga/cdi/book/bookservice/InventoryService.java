@@ -11,9 +11,17 @@ public class InventoryService {
     private Logger logger;
     private static List<Book> inventory = new ArrayList<>();
 
-    public void addBook(@Observes Book book) {
+    public void addBook(@Observes @Added Book book) {
         logger.info("Fired new book event");
         inventory.add(book);
+        logger.info("inventory has " + inventory.size() + " book(s)");
+        logger.info("Last book is "
+                + (inventory.size() != 0 ? inventory.get(inventory.size() - 1) : "NULL"));
+    }
+
+    public void removeBook(@Observes @Removed Book book) {
+        logger.info("Fired remove book event");
+        final boolean done = inventory.remove(book);
         logger.info("inventory has " + inventory.size() + " book(s)");
         logger.info("Last book is "
                 + (inventory.size() != 0 ? inventory.get(inventory.size() - 1) : "NULL"));
