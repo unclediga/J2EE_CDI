@@ -3,9 +3,14 @@ package ru.unclediga.cdi.book.bookservice;
 import javax.decorator.Decorator;
 import javax.decorator.Delegate;
 import javax.inject.Inject;
+import java.util.logging.Logger;
 
 @Decorator
 public class FromEightToThirteenDigitsDecorator implements NumberGenerator {
+
+    @Inject
+    Logger logger;
+
     @Delegate
     @Inject
     @EightDigits
@@ -22,6 +27,8 @@ public class FromEightToThirteenDigitsDecorator implements NumberGenerator {
     @Override
     public String generateNumber() {
         final String issn = numberGenerator.generateNumber();
-        return prefix13digits + editorNumber + issn.substring(1);
+        final String isbn = prefix13digits + editorNumber + issn.substring(1);
+        logger.info("Generated ISBN : " + isbn + " from ISSN :" + issn);
+        return isbn;
     }
 }

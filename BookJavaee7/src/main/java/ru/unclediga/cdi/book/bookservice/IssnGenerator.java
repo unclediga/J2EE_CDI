@@ -17,6 +17,8 @@ public class IssnGenerator implements NumberGenerator {
     private double postFix;
 
     public String generateNumber() {
-        return prefix + postFix;
+        final String issn = prefix + postFix;
+        logger.info("Generated ISSN : " + issn);
+        return issn;
     }
 }
