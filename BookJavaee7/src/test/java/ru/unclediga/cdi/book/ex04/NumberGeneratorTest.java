@@ -19,6 +19,9 @@ public class NumberGeneratorTest {
     @BeforeClass
     public static void init(){
         weld = new Weld();
+        weld.disableDiscovery()
+            .packages(BookService.class);
+ 
         container = weld.initialize();
     }
 

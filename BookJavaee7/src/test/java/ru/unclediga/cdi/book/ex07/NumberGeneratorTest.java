@@ -1,4 +1,4 @@
-package ru.unclediga.cdi.book.ex06;
+package ru.unclediga.cdi.book.ex07;
 
 import ru.unclediga.cdi.book.*;
 
@@ -19,8 +19,8 @@ public class NumberGeneratorTest {
     @BeforeClass
     public static void init(){
         weld = new Weld();
-        weld.disableDiscovery()
-            .packages(BookService.class);
+        weld.disableDiscovery().packages(BookService.class);
+
         container = weld.initialize();
     }
 
@@ -30,7 +30,7 @@ public class NumberGeneratorTest {
     }
           
     @Test
-    public void TestDefaultNumberGenerator(){
+    public void Test13DigitsNumber(){
         BookService bookService = container.instance().select(BookService.class).get();
         Book book = bookService.createBook("H2G2", 12.5f, "Geeky scifi Book");
         System.out.println(book);
@@ -38,9 +38,9 @@ public class NumberGeneratorTest {
    }
 
     @Test
-    public void Test8NumberGenerator(){
-        BookService bookService = container.instance().select(BookService.class).get();
-        Book book = bookService.createBook8("H2G2", 12.5f, "Geeky scifi Book");
+    public void Test8DigitsNumber(){
+        LegacyBookService bookService = container.instance().select(LegacyBookService.class).get();
+        Book book = bookService.createBook("H2G2", 12.5f, "Geeky scifi Book");
         System.out.println(book);
         assertTrue(book.getNumber().startsWith("8-"));
    }
