@@ -4,4 +4,10 @@
        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
        bean-discovery-mode="all">
+
+  <alternatives>
+    <class>ru.unclediga.cdi.book.ex14.MockIsbnGenerator</class>
+    <class>ru.unclediga.cdi.book.ex14.MockIssnGenerator</class>
+  </alternatives>
+
 </beans>
