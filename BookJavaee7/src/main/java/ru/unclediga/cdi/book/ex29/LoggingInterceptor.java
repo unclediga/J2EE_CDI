@@ -16,11 +16,11 @@ public class LoggingInterceptor{
 
 	@AroundInvoke
 	public Object intercept(InvocationContext ctx) throws Exception {
-		logger.severe("ENTER LoggingInterceptor");
+		logger.info("ENTER LoggingInterceptor");
 		try{
 			return ctx.proceed();
 		}finally{
-		    logger.severe("EXIT LoggingInterceptor");
+	            logger.info("EXIT LoggingInterceptor");
 		}
 	}
 }
