@@ -1,4 +1,4 @@
-package ru.unclediga.cdi.book.ex29;
+package ru.unclediga.cdi.se.interceptor;
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.InvocationContext;
@@ -8,34 +8,31 @@ import javax.annotation.PostConstruct;
 
 import java.util.logging.Logger;
 
-import ru.unclediga.cdi.book.*;
+import ru.unclediga.cdi.se.*;
 
 @Loggable
 public class CustomerService{
-  @Inject 
-  private Logger logger;
+
+  private Logger logger = Logger.getLogger(CustomerService.class.getName());
 
   public void init(){
      logger.info("init() for CustomerService // @PostConstruct");
   }
 
   public void createCustomer(Customer customer) {
-    logger.info("CREATE Customer" + customer);
     logger.info("PATH " + this.getClass().getClassLoader().getSystemResource("."));
+    logger.info("CREATE Customer" + customer);
   }
 
   public void findCustomer(Customer customer) {
     logger.info("FINDING Customer" + customer);
-    logger.info("PATH " + this.getClass().getClassLoader().getSystemResource("."));
   }
 
   public void updateCustomer(Customer customer) {
     logger.info("UPDATING Customer" + customer);
-    logger.info("PATH " + this.getClass().getClassLoader().getSystemResource("."));
   }
 
   public void removeCustomer(Customer customer) {
     logger.info("REMOVING Customer" + customer);
-    logger.info("PATH " + this.getClass().getClassLoader().getSystemResource("."));
   }
 }

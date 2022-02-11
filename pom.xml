@@ -12,6 +12,7 @@
     <modules>
         <module>AdamBein</module>
         <module>BookJavaee7</module>
+        <module>SE</module>
     </modules>
 
     <properties>

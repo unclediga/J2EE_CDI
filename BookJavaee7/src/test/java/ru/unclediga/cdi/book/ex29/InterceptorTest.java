@@ -19,8 +19,20 @@ public class InterceptorTest{
     @BeforeClass
     public static void init(){
         weld = new Weld();
-//        System.setProperty(Weld.ARCHIVE_ISOLATION_SYSTEM_PROPERTY, "false");
-        weld.disableDiscovery().packages(CustomerService.class,ru.unclediga.cdi.book.LoggerProducer.class);
+
+/*
+        weld.disableDiscovery()
+                        .beanClasses(CustomerService.class, ru.unclediga.cdi.book.LoggerProducer.class)
+                        .interceptors(LoggingInterceptor.class, SecondLoggingInterceptor.class);
+ 
+*/
+/*
+        weld.disableDiscovery()
+                        .packages(CustomerService.class)
+                        .beanClasses(ru.unclediga.cdi.book.LoggerProducer.class)
+                        .interceptors(LoggingInterceptor.class, SecondLoggingInterceptor.class);
+*/
+
         container = weld.initialize();
     }
 
@@ -34,7 +46,7 @@ public class InterceptorTest{
         CustomerService service = container.instance().select(CustomerService.class).get();
         Customer c = new Customer("Ivanov","Ivan","a@mail.ru");
         service.createCustomer(c);
-//        service.findCustomer(c);
+        service.findCustomer(c);
 //        service.updateCustomer(c);
 //        service.removeCustomer(c);
     }

@@ -1,4 +1,4 @@
-package ru.unclediga.cdi.book.ex29;
+package ru.unclediga.cdi.se.interceptor;
 
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
@@ -9,19 +9,19 @@ import java.util.logging.Logger;
 
 @Interceptor
 @Loggable
-public class LoggingInterceptor{
+public class SecondLoggingInterceptor{
 
-	private Logger logger = Logger.getLogger(LoggingInterceptor.class.getName());
+	private Logger logger = Logger.getLogger(SecondLoggingInterceptor.class.getName());
 
 	@AroundInvoke
 	public Object intercept(InvocationContext ctx) throws Exception {
-		logger.info("v v v v v v v v v ENTER LoggingInterceptor");
+		logger.info("v v v v v v v v v 222 ENTER 222 LoggingInterceptor");
 		logger.info(" Class " + ctx.getTarget().getClass().getName());
 		logger.info(" Method " + ctx.getMethod().getName());
 		try{
 			return ctx.proceed();
 		}finally{
-	            logger.info("^ ^ ^ ^ ^ ^ ^ ^ ^ EXIT LoggingInterceptor");
+	            logger.info("^ ^ ^ ^ ^ ^ ^ ^ ^ 222 EXIT 222 LoggingInterceptor");
 		}
 	}
 }

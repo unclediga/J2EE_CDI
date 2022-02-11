@@ -5,9 +5,8 @@
        version="1.1" bean-discovery-mode="all">
 
   <interceptors>
-      <class>ru.unclediga.cdi.book.ex29.LoggingInterceptor</class>
+     <class>ru.unclediga.cdi.book.ex29.LoggingInterceptor</class>
+     <class>ru.unclediga.cdi.book.ex29.SecondLoggingInterceptor</class> 
   </interceptors>
 
 </beans>
-
-    

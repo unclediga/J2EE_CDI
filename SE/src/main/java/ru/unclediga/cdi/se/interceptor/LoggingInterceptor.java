@@ -1,4 +1,4 @@
-package ru.unclediga.cdi.book.ex29;
+package ru.unclediga.cdi.se.interceptor;
 
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
