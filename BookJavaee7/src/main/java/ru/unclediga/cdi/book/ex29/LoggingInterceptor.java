@@ -7,8 +7,12 @@ import javax.interceptor.Interceptor;
 
 import java.util.logging.Logger;
 
+import javax.annotation.Priority;
+
 @Interceptor
 @Loggable
+//@Priority(javax.interceptor.Interceptor.APPLICATION - 10)
+//@Priority(200)
 public class LoggingInterceptor{
 
 	private Logger logger = Logger.getLogger(LoggingInterceptor.class.getName());

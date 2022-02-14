@@ -24,8 +24,8 @@ public class InterceptorTest{
         weld.disableDiscovery()
                         .beanClasses(CustomerService.class, ru.unclediga.cdi.book.LoggerProducer.class)
                         .interceptors(LoggingInterceptor.class, SecondLoggingInterceptor.class);
- 
-*/
+ */
+
 /*
         weld.disableDiscovery()
                         .packages(CustomerService.class)
