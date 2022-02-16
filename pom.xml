@@ -13,6 +13,7 @@
         <module>AdamBein</module>
         <module>BookJavaee7</module>
         <module>SE</module>
+        <module>AllInOne</module>
     </modules>
 
     <properties>
