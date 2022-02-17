@@ -10,5 +10,5 @@ import javax.inject.Qualifier;
 
 @Qualifier
 @Retention(RUNTIME)
-@Target({FIELD, TYPE})
+@Target({FIELD, TYPE, METHOD})
 public @interface EightDigits{}

@@ -10,8 +10,16 @@ public class IsbnGenerator implements NumberGenerator{
 	@Inject
 	Logger logger;
 
+	@Inject
+	@ThirteenDigits
+	String prefix;
+
+	@Inject
+	@ThirteenDigits
+	int postfix;
+
 	public String generateNumber(){
-		String number = "12-123456789-12";
+		String number = prefix + "-" + 123456789 + "-" + postfix;
 		logger.info("Generated ISBN "+ number);
 		return number;
 	}
