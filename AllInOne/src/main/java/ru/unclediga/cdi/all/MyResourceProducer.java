@@ -14,10 +14,10 @@ public class MyResourceProducer {
 	@Inject
 	private Logger logger;
 
-	// @Produces
-	// public MyServer getServer(){
-	//   	return new MyServer("Test Server");
-	// }
+	@Produces
+	public MyServer getServer(){
+	  	return new MyServer("Test Server");
+	}
 
 	@Produces
 	public MyConnection getConnection(MyServer server){
@@ -32,9 +32,9 @@ public class MyResourceProducer {
 	}
 
 
- //    public void closeServer(@Disposes MyServer server){
-	//  	server.close();
-	// }
+    public void closeServer(@Disposes MyServer server){
+	 	server.close();
+	}
 
 	public void closeConnection(@Disposes MyConnection connection){
         logger.info("connection.close() fired"); 

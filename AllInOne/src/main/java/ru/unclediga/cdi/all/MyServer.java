@@ -3,8 +3,8 @@ package ru.unclediga.cdi.all;
 public class MyServer {
 	public String name;
 
-	MyServer(){
-		name = "Serv:" + this.hashCode();
+	MyServer(String name){
+		this.name = "Serv(name="+ name + "):" + this.hashCode();
 		System.out.println("Init server [" + name + "]");
 	}
 
