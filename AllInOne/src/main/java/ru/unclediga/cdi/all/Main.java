@@ -11,6 +11,9 @@ public class Main{
 		BookService bookService = container.select(BookService.class).get();
 		Book book = bookService.createBook("The Hitchhiker's Guide to the Galaxy", 100.0F, "by Douglas Adams 1978");
 		System.out.println(book);
+
+		System.out.println("Query " + bookService.execQuery());
+
 		weld.shutdown();
 
 	}
