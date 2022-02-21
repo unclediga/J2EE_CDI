@@ -14,6 +14,7 @@
 
   <decorators>
       <class>ru.unclediga.cdi.all.FromEightToThirteenDigitsDecorator</class>
+      <class>ru.unclediga.cdi.all.FromEightToThirteenDigitsDecoratorPostfix</class>
   </decorators>
 
 </beans>
