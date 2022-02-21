@@ -5,11 +5,11 @@ import javax.inject.Inject;
 public class BookService {
   
   @Inject
-  @ThirteenDigits
+  @EightDigits
   NumberGenerator numberGenerator;
 
-  @Inject 
-  MySession session;
+  // @Inject 
+  // MySession session;
 
   @Loggable
   public Book createBook(String title, Float price, String description) {
@@ -19,7 +19,7 @@ public class BookService {
   }
 
 
-  public String execQuery() {
-    return session.execQuery();
-  }
+  // public String execQuery() {
+  //   return session.execQuery();
+  // }
 }

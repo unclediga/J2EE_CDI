@@ -12,7 +12,7 @@ public class Main{
 		Book book = bookService.createBook("The Hitchhiker's Guide to the Galaxy", 100.0F, "by Douglas Adams 1978");
 		System.out.println(book);
 
-		System.out.println("Query " + bookService.execQuery());
+		// System.out.println("Query " + bookService.execQuery());
 
 		weld.shutdown();
 

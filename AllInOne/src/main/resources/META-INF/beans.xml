@@ -12,4 +12,8 @@
      <class>ru.unclediga.cdi.all.LoggingInterceptor</class>
   </interceptors>
 
+  <decorators>
+      <class>ru.unclediga.cdi.all.FromEightToThirteenDigitsDecorator</class>
+  </decorators>
+
 </beans>
