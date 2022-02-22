@@ -13,6 +13,8 @@ import org.junit.BeforeClass;
 
 import static org.junit.Assert.assertTrue;
 
+import ru.unclediga.cdi.book.LoggerProducer;
+
 public class ConversationTest{
     private static Weld weld;
     private static WeldContainer container;
@@ -20,9 +22,11 @@ public class ConversationTest{
 
     @BeforeClass
     public static void init(){
-        weld = new Weld();
-        weld.disableDiscovery().packages(CustomerServiceWizard.class);
-        weld.property("org.jboss.weld.context.conversation.lazy", false);
+        weld = new Weld()
+                    .disableDiscovery()
+                    .packages(CustomerServiceWizard.class)
+                    .beanClasses(LoggerProducer.class)
+                    .property("org.jboss.weld.context.conversation.lazy", false);
         container = weld.initialize();
         
     }
@@ -36,9 +40,10 @@ public class ConversationTest{
     public void conversationTest(){
         logger.info("running conversationTest()");
         CustomerServiceWizard wizard = container.instance().select(CustomerServiceWizard.class).get();
-//        wizard.saveLogin();
-//        wizard.saveAccount();
-//        wizard.createCustomer();
+        wizard.testLogger();
+        // wizard.saveLogin();
+        // wizard.saveAccount();
+        // wizard.createCustomer();
         assertTrue("DO TEST!", true);
     }
 }

@@ -12,19 +12,27 @@ import javax.inject.Inject;
 //@ActivateThreadScope
 @ConversationScoped
 public class CustomerServiceWizard implements Serializable{
-    private static Logger logger = Logger.getLogger(CustomerServiceWizard.class.getName());
+
+    private Logger logger = Logger.getLogger(this.getClass().getName());
+
     private Login login;
     private Account account;
-    @Inject
-    private Conversation conversation;
-    @Inject
+    
+    private @Inject Conversation conversation;
+    //@Inject
     private CustomerService customerService;
 
+    public void testLogger(){    
+        logger.info("TEST LOGGER");
+        logger.info("CONV = " + conversation);
+    }  
+
     public void saveLogin(){
-        logger.info("Enter saveLogin() conversation=" + conversation);
         conversation.begin();
+        logger.info("Enter saveLogin()");
         login = new Login();
     }
+    
     public void saveAccount(){
         logger.info("Enter saveAccount()");
         account = new Account();
